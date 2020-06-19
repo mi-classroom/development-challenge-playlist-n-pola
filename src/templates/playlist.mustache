@@ -1,7 +1,7 @@
 <h2 class="aside-content__headline">Hörproben von Hans Atom</h2>
-<ul class="playlist">
+<ul class="playlist" data-js-playlist="[data-js-song]">
   {{#.}}
-    <li class="playlist__song" data-js-song-src="{{src}}">
+    <li class="playlist__song" data-js-song data-js-song-src="{{src}}">
       <i class="material-icons playlist__icon">play_circle_filled</i>
       <span class="playlist__title">{{artist}} - {{title}}</span>
     </li>
