@@ -8,8 +8,9 @@ class Playlist {
       const sound = new Howl({
         src: [song.dataset.jsSongSrc],
       });
-      console.log(sound);
-      this.songsObjs.push(sound);
+      const play = song.querySelector('[data-js-song-play]');
+      const stop = song.querySelector('[data-js-song-stop]');
+      this.songsObjs.push({ play, stop, song: sound });
 
       song.addEventListener('click', () => {
         this.play(i);
@@ -19,9 +20,15 @@ class Playlist {
 
   play(index) {
     const { currentSong } = this;
-    if (currentSong != null) { this.songsObjs[currentSong].stop(); }
+    if (currentSong != null) {
+      this.songsObjs[currentSong].song.stop();
+      this.songsObjs[currentSong].stop.classList.remove('playlist__icon--active');
+      this.songsObjs[currentSong].play.classList.add('playlist__icon--active');
+    }
     if (currentSong != index) {
-      this.songsObjs[index].play();
+      this.songsObjs[index].song.play();
+      this.songsObjs[index].stop.classList.add('playlist__icon--active');
+      this.songsObjs[index].play.classList.remove('playlist__icon--active');
       this.currentSong = index;
     }
   }
@@ -29,7 +36,6 @@ class Playlist {
 
 // eslint-disable-next-line import/extensions
 const playlistWrap = document.querySelector('[data-js-playlist-section]');
-playlistWrap.addEventListener;
 fetch('./json/playlist.json')
   .then((response) => response.json())
   .then((data) => {

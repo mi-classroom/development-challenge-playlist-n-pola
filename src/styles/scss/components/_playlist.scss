@@ -22,6 +22,10 @@
 
   &__icon {
     margin-right: $xs;
+    display: none !important; // :( Material Icons macht mir einen Strich durch die Rechnung
+    &--active {
+      display: block !important; // :( Material Icons macht mir einen Strich durch die Rechnung
+    }
   }
 
   &__title {

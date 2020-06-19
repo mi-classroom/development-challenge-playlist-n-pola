@@ -2,7 +2,8 @@
 <ul class="playlist" data-js-playlist="[data-js-song]">
   {{#.}}
     <li class="playlist__song" data-js-song data-js-song-src="{{src}}">
-      <i class="material-icons playlist__icon">play_circle_filled</i>
+      <i data-js-song-play class="material-icons playlist__icon playlist__icon--active">play_circle_filled</i>
+      <i data-js-song-stop class="material-icons playlist__icon">stop</i>
       <span class="playlist__title">{{artist}} - {{title}}</span>
     </li>
   {{/.}}

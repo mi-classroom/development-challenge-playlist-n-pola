@@ -412,7 +412,10 @@ img {
   border-bottom: 1px solid #000; }
 
 .playlist__icon {
-  margin-right: 12.5px; }
+  margin-right: 12.5px;
+  display: none !important; }
+  .playlist__icon--active {
+    display: block !important; }
 
 .playlist__title {
   font-size: 16px;
