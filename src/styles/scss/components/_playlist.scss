@@ -2,5 +2,30 @@
 ############################################################################ */
 
 .playlist {
+  &__song {
+    display: flex;
+    padding: $xs 0;
+    align-items: center;
+    transition: all 0.3s ease;
 
+    &:hover {
+      background: $red;
+      color: $lightest;
+      padding-left: $xs;
+      cursor: pointer;
+    }
+  }
+
+  &__song:not(:last-of-type) {
+    border-bottom: $border-width solid $darkest;
+  }
+
+  &__icon {
+    margin-right: $xs;
+  }
+
+  &__title {
+    font-size: $s;
+    line-height: $lh-default;
+  }
 }
