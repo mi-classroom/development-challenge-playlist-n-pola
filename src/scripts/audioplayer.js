@@ -30,6 +30,8 @@ class Playlist {
       this.songsObjs[index].stop.classList.add('playlist__icon--active');
       this.songsObjs[index].play.classList.remove('playlist__icon--active');
       this.currentSong = index;
+    } else {
+      this.currentSong = null;
     }
   }
 }
