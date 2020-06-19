@@ -413,9 +413,9 @@ img {
 
 .playlist__icon {
   margin-right: 12.5px;
-  display: none !important; }
+  display: none; }
   .playlist__icon--active {
-    display: block !important; }
+    display: block; }
 
 .playlist__title {
   font-size: 16px;
